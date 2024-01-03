@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BASIC</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        p{
+            background-color: white;
+            /* text 디자인 */
+            letter-spacing: 2px;
+            word-spacing: 5px;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .bigtext{
+            font-size: 24px;
+        }
+        .relativetext{
+            /* .부모요소 기준 */
+            font-size: 120%;
+        }
+        .em_parent{
+            font-size: 20px;
+        }
+        .em_child{
+            font-size: 1.5em;
+        }
+        .percent_parent{
+            font-size: 20px;
+        }
+        .percent_child{
+            font-size: 150%;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2 style="text-align: center;">기본문법</h2>
+    <p>우선 적용</p>
+    <p class="italic bigtext">font style 과 font size 중첩적용1 집 가기 1시간 30분전</p>
+    <p class="italic relativetext">font style 과 font size 중첩적용1 집 가기 1시간 29분전</p>
+
+    <!-- em : 배수단위 / percent : % 단위 비교 -->
+    <div class="em_parent">
+        <div class="em_child">
+            이 텍스트는 부모 글꼴의 1.5배 크기의 글꼴 이면서 1시간22분 남았습니다.
+        </div>
+    </div>
+
+    <div class="percent_parent">
+        <div class="percent_child">
+            이 텍스트는 부모 글꼴의 150% 크기의 글꼴 이면서 1시간22분 남았습니다.
+        </div>
+    </div>
+
+    <div style="border: 2px solid black; padding: 5px; margin: 15px">
+        margin, border, padding 을 가진 요소 1시간 3분남음
+    </div>
+
+    <div style="padding-right :150px">
+        왼쪽 padding 만을 가진 텍스트 요소 1시간 3분전
+    </div>
+    <div>
+        <table border="1" style="border-collapse: collapse; text-align : center; margin: auto">
+            <caption>테이블 명</caption>
+            <thead>
+                <tr>
+                    <th>제목1</th>
+                    <th>부제목1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>내용1</td>
+                    <td>내용2</td>
+                </tr>
+                <tr>
+                    <td>내용A</td>
+                    <td>내용B</td>
+                </tr>
+                <tr>
+                    <td>내용ㅁ</td>
+                    <td>내용ㅠ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
