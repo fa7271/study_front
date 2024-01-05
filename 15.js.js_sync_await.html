@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        async function callbackImp() {
+            try{
+                const response1 = await $.ajax({
+                    url: 'https://jsonplaceholder.typicode.com/posts/1',
+                    type: 'GET',
+                    dataType: 'json',
+                })
+                console.log("ajax :")
+                console.log(response1)
+            }catch(e){
+                console.log(e)
+            }
+            
+            /*
+            console.log(response1)
+            const response2 = await $.ajax({
+                url: 'https://www.naver.com',
+                method: 'POST',
+                dataType: 'json',
+                data: response1,
+            })
+            console.log(response2)
+            const response3 = await $.ajax({
+                url: 'https://www.daum.com',
+                method: 'POST',
+                dataType: 'json',
+                data: response2,
+            })
+            console.log(response3)
+        }
+        */
+        try{
+            const response2 = await axios.get('https://jsonplaceholder.typicode.com/posts/1')
+            console.log("axios : ")
+            console.log(response2.data.body)
+        }catch(e){
+            console.log(e)
+        }
+        
+        
+        /*
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/posts/1',
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    $.ajax({
+                        url: 'https://www.naver.com',
+                        method: 'POST',
+                        dataType: 'json',
+                        data: response,
+                        success: function (response2) {
+                            console.log(response2)
+                            $.ajax({
+                                url: 'https://www.naver.com',
+                                method: 'POST',
+                                dataType: 'json',
+                                data: response2,
+                                success: function (response3) {
+                                    console.log(respons3)
+                                },
+                                error: function () {
+                                }
+                            })
+                        },
+                        error: function () {
+                        }
+                    })
+                },
+                error: function () {
+                }
+            })
+        })
+        */
+        }
+        callbackImp()
+    </script>
+</body>
+
+</html>
